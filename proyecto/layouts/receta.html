@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Receta - Tasty Bites</title>
+    <link rel="stylesheet" href="receta.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-chef-hat text-orange-600">
+                    <path
+                        d="M17 21a1 1 0 0 0 1-1v-5.35c0-.457.316-.844.727-1.041a4 4 0 0 0-2.134-7.589 5 5 0 0 0-9.186 0 4 4 0 0 0-2.134 7.588c.411.198.727.585.727 1.041V20a1 1 0 0 0 1 1Z">
+                    </path>
+                    <path d="M6 17h12"></path>
+                </svg>
+                <h1>Tasty Bites</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#" class="active">Recetas</a></li>
+                    <li><a href="#">Categorías</a></li>
+                    <li><a href="#">Comunidad</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <a href="#" class="btn-secondary">Iniciar Sesión</a>
+                <a href="#" class="btn-primary">Registrarse</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="breadcrumb">
+        <div class="container">
+            <a href="#"><i class="fas fa-home"></i> Inicio</a>
+            <i class="fas fa-chevron-right"></i>
+            <a href="#">Recetas</a>
+            <i class="fas fa-chevron-right"></i>
+            <span>Ramen especiado con pollo</span>
+        </div>
+    </section>
+
+    <main class="recipe-page">
+        <section class="recipe-hero">
+            <div class="hero-media">
+                <div class="recipe-image">Fotografía de ramen especiado</div>
+                <div class="media-actions">
+                    <button><i class="fas fa-play"></i> Ver video</button>
+                    <button><i class="fas fa-image"></i> Galería</button>
+                </div>
+            </div>
+            <div class="hero-details">
+                <div class="tags">
+                    <span>🔥 Picante</span>
+                    <span>⏱ 40 min</span>
+                    <span>🍜 Asiático</span>
+                </div>
+                <h1>Ramen especiado con pollo crujiente y vegetales frescos</h1>
+                <p>Un caldo profundo y aromático acompañado de pollo crocante, noodles al dente y vegetales crujientes.
+                    Perfecto para un almuerzo reconfortante.</p>
+                <div class="meta">
+                    <div class="author">
+                        <div class="avatar">LC</div>
+                        <div>
+                            <span class="label">Autor</span>
+                            <strong>Laura Campos</strong>
+                            <span class="date">Actualizado el 12 de mayo</span>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-primary"><i class="fas fa-bookmark"></i> Guardar</button>
+                        <button class="btn-secondary"><i class="fas fa-print"></i> Imprimir</button>
+                        <button class="btn-secondary"><i class="fas fa-share-alt"></i> Compartir</button>
+                    </div>
+                </div>
+                <div class="stats">
+                    <div>
+                        <h3>4.8</h3>
+                        <span>Calificación (230)</span>
+                    </div>
+                    <div>
+                        <h3>6</h3>
+                        <span>Porciones</span>
+                    </div>
+                    <div>
+                        <h3>650 kcal</h3>
+                        <span>por porción</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="recipe-layout">
+            <article class="recipe-content">
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h2>Ingredientes</h2>
+                        <ul>
+                            <li>400 g de noodles de trigo frescos</li>
+                            <li>2 pechugas de pollo marinadas</li>
+                            <li>1.5 L de caldo de pollo casero</li>
+                            <li>4 cucharadas de miso rojo</li>
+                            <li>2 cucharadas de pasta de chile</li>
+                            <li>Champiñones, cebollín, brotes y huevo marinado</li>
+                        </ul>
+                    </div>
+                    <div class="info-card">
+                        <h2>Utensilios clave</h2>
+                        <ul>
+                            <li>Olla de hierro fundido</li>
+                            <li>Cazo pequeño</li>
+                            <li>Sartén antiadherente</li>
+                            <li>Colador fino</li>
+                            <li>Cuchillo santoku</li>
+                        </ul>
+                    </div>
+                    <div class="info-card">
+                        <h2>Tips del chef</h2>
+                        <ul>
+                            <li>Marina el pollo con jengibre y ajo por al menos 4 horas.</li>
+                            <li>Agrega el miso fuera del fuego para preservar el sabor.</li>
+                            <li>Sirve inmediatamente para mantener los noodles firmes.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <section class="steps">
+                    <h2>Paso a paso</h2>
+                    <ol>
+                        <li>
+                            <div class="step-header">
+                                <span>Paso 1</span>
+                                <strong>Prepara el caldo base</strong>
+                            </div>
+                            <p>En una olla, saltea ajo, jengibre y pasta de chile. Incorpora el caldo de pollo y deja
+                                reducir a fuego medio por 20 minutos.</p>
+                        </li>
+                        <li>
+                            <div class="step-header">
+                                <span>Paso 2</span>
+                                <strong>Fríe el pollo</strong>
+                            </div>
+                            <p>Empana el pollo marinado y fríelo en abundante aceite hasta que esté dorado y crujiente.
+                                Déjalo reposar sobre papel absorbente.</p>
+                        </li>
+                        <li>
+                            <div class="step-header">
+                                <span>Paso 3</span>
+                                <strong>Monta el bol</strong>
+                            </div>
+                            <p>Cocina los noodles según indicaciones, colócalos en el bol y añade el caldo caliente.
+                                Acompaña con pollo, vegetales, huevo marinado y aceite de chile.</p>
+                        </li>
+                    </ol>
+                </section>
+
+                <section class="notes">
+                    <h2>Notas y sustituciones</h2>
+                    <div class="note-grid">
+                        <div class="note-card">
+                            <h3>Vegetariano</h3>
+                            <p>Sustituye el pollo por tofu firme marinado y utiliza caldo vegetal con kombu y shiitake.</p>
+                        </div>
+                        <div class="note-card">
+                            <h3>Menos picante</h3>
+                            <p>Reduce la pasta de chile a la mitad y equilibra con una cucharada extra de miso blanco.</p>
+                        </div>
+                        <div class="note-card">
+                            <h3>Meal prep</h3>
+                            <p>Guarda el caldo y toppings por separado hasta por 3 días. Cocina los noodles justo antes de
+                                servir.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="comments">
+                    <div class="section-header">
+                        <h2>Comentarios destacados</h2>
+                        <button class="btn-secondary"><i class="fas fa-pencil"></i> Escribir reseña</button>
+                    </div>
+                    <div class="comment-list">
+                        <article class="comment">
+                            <div class="avatar">MS</div>
+                            <div>
+                                <div class="comment-meta">
+                                    <strong>María Soto</strong>
+                                    <span>Calificó 5/5</span>
+                                    <time>Hace 3 días</time>
+                                </div>
+                                <p>El caldo quedó súper balanceado, seguí el tip del miso y fue un éxito. Lo repetiré para
+                                    mis cenas con amigos.</p>
+                            </div>
+                        </article>
+                        <article class="comment">
+                            <div class="avatar">JR</div>
+                            <div>
+                                <div class="comment-meta">
+                                    <strong>Jorge Rivas</strong>
+                                    <span>Calificó 4/5</span>
+                                    <time>Hace 1 semana</time>
+                                </div>
+                                <p>Recomiendo preparar doble porción de toppings. El pollo crujiente fue la estrella del
+                                    plato.</p>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </article>
+
+            <aside class="recipe-sidebar">
+                <div class="widget">
+                    <h3>Información nutricional</h3>
+                    <ul>
+                        <li><span>Calorías</span><strong>650 kcal</strong></li>
+                        <li><span>Proteína</span><strong>38 g</strong></li>
+                        <li><span>Carbohidratos</span><strong>56 g</strong></li>
+                        <li><span>Grasas</span><strong>28 g</strong></li>
+                        <li><span>Sodio</span><strong>940 mg</strong></li>
+                    </ul>
+                </div>
+                <div class="widget schedule">
+                    <h3>Planifica tu menú</h3>
+                    <div class="schedule-card">
+                        <div>
+                            <span>Viernes</span>
+                            <strong>Cena temática asiática</strong>
+                        </div>
+                        <button class="btn-secondary"><i class="fas fa-plus"></i> Agregar</button>
+                    </div>
+                    <div class="schedule-card">
+                        <div>
+                            <span>Domingo</span>
+                            <strong>Batch cooking semanal</strong>
+                        </div>
+                        <button class="btn-secondary"><i class="fas fa-plus"></i> Agregar</button>
+                    </div>
+                </div>
+                <div class="widget related">
+                    <h3>Recetas relacionadas</h3>
+                    <ul>
+                        <li>
+                            <div class="thumb">Pho vietnamita aromático</div>
+                            <div>
+                                <strong>Pho especiado</strong>
+                                <span>30 min · Fácil</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="thumb">Laksa con coco</div>
+                            <div>
+                                <strong>Laksa de camarón</strong>
+                                <span>45 min · Intermedio</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="thumb">Ramen vegano</div>
+                            <div>
+                                <strong>Ramen vegetal</strong>
+                                <span>35 min · Fácil</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+        </section>
+    </main>
+</body>
+
+</html>
