@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perfil de usuario - Tasty Bites</title>
+    <link rel="stylesheet" href="perfil.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-chef-hat text-orange-600">
+                    <path
+                        d="M17 21a1 1 0 0 0 1-1v-5.35c0-.457.316-.844.727-1.041a4 4 0 0 0-2.134-7.589 5 5 0 0 0-9.186 0 4 4 0 0 0-2.134 7.588c.411.198.727.585.727 1.041V20a1 1 0 0 0 1 1Z">
+                    </path>
+                    <path d="M6 17h12"></path>
+                </svg>
+                <h1>Tasty Bites</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Recetas</a></li>
+                    <li><a href="#">Categorías</a></li>
+                    <li><a href="#" class="active">Comunidad</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <a href="#" class="btn-secondary">Iniciar Sesión</a>
+                <a href="#" class="btn-primary">Registrarse</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="profile-page">
+        <section class="profile-hero">
+            <div class="banner">
+                <div class="cover-placeholder">Tus mejores momentos en la cocina</div>
+            </div>
+            <div class="profile-info">
+                <div class="avatar">AS</div>
+                <div class="details">
+                    <div class="headline">
+                        <div>
+                            <h1>Andrea Salazar</h1>
+                            <p>@andreacooks · Ciudad de México</p>
+                        </div>
+                        <div class="actions">
+                            <button class="btn-primary"><i class="fas fa-user-plus"></i> Seguir</button>
+                            <button class="btn-secondary"><i class="fas fa-envelope"></i> Mensaje</button>
+                        </div>
+                    </div>
+                    <div class="stats">
+                        <div>
+                            <h3>48</h3>
+                            <span>Recetas publicadas</span>
+                        </div>
+                        <div>
+                            <h3>12.4k</h3>
+                            <span>Seguidores</span>
+                        </div>
+                        <div>
+                            <h3>320</h3>
+                            <span>Recetas guardadas</span>
+                        </div>
+                        <div>
+                            <h3>89</h3>
+                            <span>Eventos asistidos</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tabs">
+                <button class="active">Recetas</button>
+                <button>Favoritos</button>
+                <button>Logros</button>
+                <button>Reseñas</button>
+            </div>
+        </section>
+
+        <section class="profile-layout">
+            <div class="main-column">
+                <section class="featured-recipes">
+                    <div class="section-header">
+                        <h2>Recetas destacadas</h2>
+                        <a href="#">Ver todas <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="recipe-grid">
+                        <article class="recipe-card">
+                            <div class="thumb">Tarta de frutos rojos</div>
+                            <div class="card-body">
+                                <span class="badge">Nuevo</span>
+                                <h3>Tarta glaseada con frutos rojos</h3>
+                                <p>Base crocante con crema de vainilla y topping de frutos rojos frescos.</p>
+                                <div class="card-meta">
+                                    <span>45 min</span>
+                                    <span>Postres</span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="recipe-card">
+                            <div class="thumb">Ensalada cítrica</div>
+                            <div class="card-body">
+                                <span class="badge">Top 10</span>
+                                <h3>Ensalada cítrica con quinoa</h3>
+                                <p>Mezcla vibrante de cítricos, quinoa esponjosa y vinagreta de miel.</p>
+                                <div class="card-meta">
+                                    <span>20 min</span>
+                                    <span>Saludable</span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="recipe-card">
+                            <div class="thumb">Ramen vegetariano</div>
+                            <div class="card-body">
+                                <span class="badge">Tendencia</span>
+                                <h3>Ramen vegetariano de miso blanco</h3>
+                                <p>Caldo suave con vegetales al vapor y fideos integrales.</p>
+                                <div class="card-meta">
+                                    <span>35 min</span>
+                                    <span>Veggie</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="activity-feed">
+                    <div class="section-header">
+                        <h2>Actividad reciente</h2>
+                        <div class="filters">
+                            <button class="active">Todo</button>
+                            <button>Recetas</button>
+                            <button>Eventos</button>
+                            <button>Comentarios</button>
+                        </div>
+                    </div>
+                    <div class="timeline">
+                        <article class="event">
+                            <div class="icon"><i class="fas fa-star"></i></div>
+                            <div>
+                                <div class="event-meta">
+                                    <h3>Ganadora del reto “Sabores de primavera”</h3>
+                                    <time>Hace 2 días</time>
+                                </div>
+                                <p>Su receta de pavlova tropical conquistó al jurado con su textura y balance de sabores.</p>
+                                <button class="btn-secondary">Ver receta</button>
+                            </div>
+                        </article>
+                        <article class="event">
+                            <div class="icon"><i class="fas fa-calendar-check"></i></div>
+                            <div>
+                                <div class="event-meta">
+                                    <h3>Confirmó asistencia al Brunch Creativo</h3>
+                                    <time>Hace 5 días</time>
+                                </div>
+                                <p>Se unirá al evento colaborativo de creadores para desarrollar nuevas propuestas dulces.</p>
+                                <button class="btn-secondary">Ver detalles</button>
+                            </div>
+                        </article>
+                        <article class="event">
+                            <div class="icon"><i class="fas fa-comment-dots"></i></div>
+                            <div>
+                                <div class="event-meta">
+                                    <h3>Comentó la receta “Risotto de hongos”</h3>
+                                    <time>Hace 1 semana</time>
+                                </div>
+                                <p>“El truco del caldo infusionado elevó el resultado final. ¡Gracias por compartirlo!”</p>
+                                <button class="btn-secondary">Ver receta</button>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </div>
+
+            <aside class="sidebar">
+                <div class="widget about">
+                    <h3>Sobre Andrea</h3>
+                    <p>Chef autodidacta enfocada en repostería creativa y experiencias sensoriales. Le encanta compartir
+                        talleres virtuales y mentorías para cocineros emergentes.</p>
+                    <ul class="tags">
+                        <li>#Repostería</li>
+                        <li>#FoodStyling</li>
+                        <li>#Eventos</li>
+                    </ul>
+                </div>
+                <div class="widget badges">
+                    <h3>Insignias</h3>
+                    <div class="badge-grid">
+                        <div class="badge-card">
+                            <span>🏆</span>
+                            <p>Mentora destacada</p>
+                        </div>
+                        <div class="badge-card">
+                            <span>🔥</span>
+                            <p>Creadora top 5</p>
+                        </div>
+                        <div class="badge-card">
+                            <span>💬</span>
+                            <p>Comentarista experta</p>
+                        </div>
+                        <div class="badge-card">
+                            <span>📅</span>
+                            <p>Asistente frecuente</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget events">
+                    <h3>Próximos eventos</h3>
+                    <div class="event-card">
+                        <div>
+                            <span>22 MAY</span>
+                            <strong>Masterclass de pastelería floral</strong>
+                        </div>
+                        <button class="btn-secondary">Reservar</button>
+                    </div>
+                    <div class="event-card">
+                        <div>
+                            <span>03 JUN</span>
+                            <strong>Encuentro de brunch creativo</strong>
+                        </div>
+                        <button class="btn-secondary">Reservar</button>
+                    </div>
+                </div>
+                <div class="widget collections">
+                    <h3>Colecciones destacadas</h3>
+                    <ul>
+                        <li>
+                            <div class="thumb">Verano tropical</div>
+                            <div>
+                                <strong>Explosión tropical</strong>
+                                <span>12 recetas</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="thumb">Brunch creativo</div>
+                            <div>
+                                <strong>Mañanas memorables</strong>
+                                <span>8 recetas</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="thumb">Postres mini</div>
+                            <div>
+                                <strong>Miniaturas dulces</strong>
+                                <span>15 recetas</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+        </section>
+    </main>
+</body>
+
+</html>

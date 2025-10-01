@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iniciar Sesión - Tasty Bites</title>
+    <link rel="stylesheet" href="inicio-sesion.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-chef-hat text-orange-600">
+                    <path
+                        d="M17 21a1 1 0 0 0 1-1v-5.35c0-.457.316-.844.727-1.041a4 4 0 0 0-2.134-7.589 5 5 0 0 0-9.186 0 4 4 0 0 0-2.134 7.588c.411.198.727.585.727 1.041V20a1 1 0 0 0 1 1Z">
+                    </path>
+                    <path d="M6 17h12"></path>
+                </svg>
+                <h1>Tasty Bites</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Recetas</a></li>
+                    <li><a href="#">Categorías</a></li>
+                    <li><a href="#">Comunidad</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <a href="#" class="btn-secondary active">Iniciar Sesión</a>
+                <a href="#" class="btn-primary">Registrarse</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="auth-layout">
+        <section class="auth-hero">
+            <div class="hero-content">
+                <span class="badge">Tu comunidad culinaria</span>
+                <h2>Vuelve a inspirarte con recetas creadas por chefs y apasionados como tú.</h2>
+                <p>Guarda tus platos favoritos, comparte tus creaciones y descubre nuevas tendencias gastronómicas.
+                </p>
+                <ul class="benefits">
+                    <li><i class="fas fa-bookmark"></i> Lista personal de favoritos ilimitada.</li>
+                    <li><i class="fas fa-comment-dots"></i> Conversaciones en vivo con la comunidad.</li>
+                    <li><i class="fas fa-award"></i> Retos semanales con recompensas exclusivas.</li>
+                </ul>
+            </div>
+            <div class="hero-image">
+                <div class="image-placeholder">Colección de recetas de temporada</div>
+            </div>
+        </section>
+
+        <section class="auth-card">
+            <div class="card-header">
+                <h2>Inicia sesión</h2>
+                <p>Continúa con tu correo o red social favorita.</p>
+            </div>
+            <div class="social-login">
+                <button><i class="fab fa-google"></i> Google</button>
+                <button><i class="fab fa-facebook-f"></i> Facebook</button>
+                <button><i class="fab fa-apple"></i> Apple</button>
+            </div>
+            <div class="divider"><span>o usa tu correo</span></div>
+            <form class="auth-form">
+                <label>
+                    Correo electrónico
+                    <input type="email" placeholder="nombre@correo.com" required />
+                </label>
+                <label class="password-field">
+                    Contraseña
+                    <input type="password" placeholder="Tu contraseña segura" required />
+                    <a href="#">¿Olvidaste tu contraseña?</a>
+                </label>
+                <label class="remember">
+                    <input type="checkbox" /> Mantener sesión iniciada
+                </label>
+                <button type="submit" class="btn-primary">Ingresar</button>
+            </form>
+            <p class="switch">¿Aún no tienes cuenta? <a href="#">Regístrate ahora</a></p>
+        </section>
+    </main>
+</body>
+
+</html>
