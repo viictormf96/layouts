@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CookShare - Plataforma de Recetas</title>
+    <link rel="stylesheet" href="recetas-wireframe.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>CookShare</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Inicio</a></li>
+                    <li><a href="#">Recetas</a></li>
+                    <li><a href="#">Categorías</a></li>
+                    <li><a href="#">Comunidad</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
+                <a href="#" class="btn-secondary">Iniciar Sesión</a>
+                <a href="#" class="btn-primary">Registrarse</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Descubre el placer de cocinar</h1>
+                <p>Miles de recetas deliciosas esperan por ti. Encuentra inspiración para tus comidas diarias.</p>
+                <div class="search-bar">
+                    <input type="text" placeholder="Buscar recetas, ingredientes...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="popular-tags">
+                    <span>Popular:</span>
+                    <a href="#">Vegetariano</a>
+                    <a href="#">Rápido</a>
+                    <a href="#">Postres</a>
+                    <a href="#">Saludable</a>
+                </div>
+            </div>
+            <div class="hero-image" style="background-color: #f0ad4e; height: 400px; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; width: 100%;">
+                <div>Imagen Principal</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured-recipes">
+        <div class="container">
+            <div class="section-header">
+                <h2>Recetas Destacadas</h2>
+                <a href="#" class="view-all">Ver todas <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="recipe-grid">
+                <div class="recipe-card">
+                    <div style="background-color: #5cb85c; height: 200px; display: flex; align-items: center; justify-content: center; color: white; font-size: 18px;">
+                        Ensalada Mediterránea
+                    </div>
+                    <div class="recipe-content">
+                        <div class="recipe-meta">
+                            <span class="recipe-category">Vegetariano</span>
+                            <span class="recipe-time"><i class="far fa-clock"></i> 30 min</span>
+                        </div>
+                        <h3>Ensalada Mediterránea</h3>
+                        <p>Una deliciosa ensalada con ingredientes frescos del mediterráneo.</p>
+                        <div class="recipe-author">
+                            <div style="background-color: #3498db; width: 30px; height: 30px; border-radius: 50%; display: inline-block;"></div>
+                            <span>Por María García</span>
+                        </div>
+                        <div class="recipe-actions">
+                            <button class="action-btn"><i class="far fa-heart"></i> 120</button>
+                            <button class="action-btn"><i class="far fa-comment"></i> 14</button>
+                            <button class="action-btn"><i class="far fa-bookmark"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="recipe-card">
+                    <div class="recipe-image">
+                        <div style="background-color: #d9534f; height: 200px; display: flex; align-items: center; justify-content: center; color: white; font-size: 18px;">
+                            Imagen de Receta
+                        </div>
+                        <div class="recipe-tag">Rápido</div>
+                        <div class="recipe-actions">
+                            <button class="action-btn"><i class="far fa-heart"></i></button>
+                            <button class="action-btn"><i class="far fa-bookmark"></i></button>
+                        </div>
+                    </div>
+                    <div class="recipe-content">
+                        <h3>Pasta al Pesto</h3>
+                        <div class="recipe-meta">
+                            <span><i class="far fa-clock"></i> 15 min</span>
+                            <span><i class="fas fa-fire"></i> 450 cal</span>
+                            <span><i class="fas fa-star"></i> 4.6</span>
+                        </div>
+                        <p>Pasta con salsa pesto casera, piñones y queso parmesano.</p>
+                        <div class="recipe-author">
+                            <div style="background-color: #428bca; width: 30px; height: 30px; border-radius: 50%; display: inline-block; margin-right: 5px;"></div>
+                            <span>Carlos Rodríguez</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="recipe-card">
+                    <div class="recipe-image">
+                        <div style="background-color: #9370db; height: 200px; display: flex; align-items: center; justify-content: center; color: white; font-size: 18px;">
+                            Imagen de Receta
+                        </div>
+                        <div class="recipe-tag">Postres</div>
+                        <div class="recipe-actions">
+                            <button class="action-btn"><i class="far fa-heart"></i></button>
+                            <button class="action-btn"><i class="far fa-bookmark"></i></button>
+                        </div>
+                    </div>
+                    <div class="recipe-content">
+                        <h3>Tarta de Chocolate</h3>
+                        <div class="recipe-meta">
+                            <span><i class="far fa-clock"></i> 60 min</span>
+                            <span><i class="far fa-user"></i> 8 porciones</span>
+                        </div>
+                        <p>Deliciosa tarta de chocolate con ganache y frutos rojos.</p>
+                        <div class="recipe-author">
+                            <div style="background-color: #428bca; width: 30px; height: 30px; border-radius: 50%; display: inline-block; margin-right: 5px;"></div>
+                            <span>Ana Martínez</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="categories">
+        <div class="container">
+            <div class="section-header">
+                <h2>Explora por Categorías</h2>
+                <a href="#" class="view-all">Ver todas <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div style="background-color: #5cb85c; height: 200px; display: flex; align-items: center; justify-content: center; color: white; font-size: 18px;">
+                        Vegetariano
+                    </div>
+                    <div class="category-content">
+                        <h3>Vegetariano</h3>
+                        <p>150 recetas</p>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div style="background-color: #d9534f; height: 200px; display: flex; align-items: center; justify-content: center; color: white; font-size: 18px;">
+                        Carnes
+                    </div>
+                    <div class="category-content">
+                        <h3>Carnes</h3>
+                        <p>120 recetas</p>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div style="background-color: #9370db; height: 200px; display: flex; align-items: center; justify-content: center; color: white; font-size: 18px;">
+                        Postres
+                    </div>
+                    <div class="category-content">
+                        <h3>Postres</h3>
+                        <p>100 recetas</p>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div style="background-color: #f0ad4e; height: 200px; display: flex; align-items: center; justify-content: center; color: white; font-size: 18px;">
+                        Panadería
+                    </div>
+                    <div class="category-content">
+                        <h3>Panadería</h3>
+                        <p>80 recetas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>¡No te pierdas ninguna receta!</h2>
+                <p>Suscríbete a nuestro boletín y recibe las mejores recetas cada semana.</p>
+                <form>
+                    <input type="email" placeholder="Tu correo electrónico">
+                    <button type="submit" class="btn-primary">Suscribirse</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>CookShare</h3>
+                    <p>La mejor plataforma para descubrir, compartir y disfrutar de recetas deliciosas.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Recetas</a></li>
+                        <li><a href="#">Categorías</a></li>
+                        <li><a href="#">Comunidad</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Categorías</h4>
+                    <ul>
+                        <li><a href="#">Vegetariano</a></li>
+                        <li><a href="#">Carnes</a></li>
+                        <li><a href="#">Pescados</a></li>
+                        <li><a href="#">Postres</a></li>
+                        <li><a href="#">Panadería</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contacto</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-envelope"></i> info@cookshare.com</li>
+                        <li><i class="fas fa-phone"></i> +34 123 456 789</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Calle Principal 123, Madrid</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 CookShare. Todos los derechos reservados.</p>
+                <div class="footer-links">
+                    <a href="#">Términos y condiciones</a>
+                    <a href="#">Política de privacidad</a>
+                    <a href="#">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

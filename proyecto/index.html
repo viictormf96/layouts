@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CookShare - Plataforma de Recetas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #e74c3c;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #e74c3c;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background: white;
+            border-radius: 25px;
+            padding: 0.5rem 1rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .search-bar input {
+            border: none;
+            outline: none;
+            padding: 0.5rem;
+            width: 300px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, #e74c3c, #f39c12);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .categories {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .category-tag {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .category-tag:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 20px 20px 0 0;
+            margin-top: 2rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #333;
+            text-align: center;
+        }
+
+        .recipe-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .recipe-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .recipe-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .recipe-image {
+            height: 200px;
+            background: linear-gradient(45deg, #ff6b6b, #feca57);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            position: relative;
+        }
+
+        .recipe-info {
+            padding: 1.5rem;
+        }
+
+        .recipe-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .recipe-meta {
+            display: flex;
+            justify-content: space-between;
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .rating {
+            color: #f39c12;
+        }
+
+        .recipe-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: #f8f9fa;
+            color: #666;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+
+        .stats-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 15px;
+            background: #f8f9fa;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .user-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .floating-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #e74c3c, #f39c12);
+            color: white;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s;
+        }
+
+        .floating-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: white;
+            margin: 5% auto;
+            padding: 2rem;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 15px;
+            position: relative;
+        }
+
+        .close {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #999;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .search-bar input {
+                width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">🍳 CookShare</div>
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar recetas, ingredientes...">
+            <span style="cursor: pointer;">🔍</span>
+        </div>
+        <div class="nav-links">
+            <a href="#" onclick="showLogin()">Iniciar Sesión</a>
+            <a href="#" onclick="showRegister()">Registrarse</a>
+            <button class="btn-primary" onclick="showAddRecipe()">+ Agregar Receta</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Descubre, Comparte, Cocina</h1>
+        <p>La mejor plataforma para encontrar y compartir recetas deliciosas</p>
+        
+        <div class="categories">
+            <div class="category-tag">🍝 Pasta</div>
+            <div class="category-tag">🥗 Ensaladas</div>
+            <div class="category-tag">🍰 Postres</div>
+            <div class="category-tag">🍲 Sopas</div>
+            <div class="category-tag">🥘 Principales</div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Stats Section -->
+        <div class="stats-section">
+            <div class="stat-card">
+                <div class="stat-number">2,547</div>
+                <div>Recetas Publicadas</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">1,234</div>
+                <div>Chefs Activos</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">5,678</div>
+                <div>Platos Cocinados</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">98%</div>
+                <div>Satisfacción</div>
+            </div>
+        </div>
+
+        <!-- Featured Recipes -->
+        <h2 class="section-title">🌟 Recetas Destacadas</h2>
+        <div class="recipe-grid">
+            <div class="recipe-card" onclick="showRecipeDetail()">
+                <div class="recipe-image">🍝</div>
+                <div class="recipe-info">
+                    <div class="recipe-title">Pasta Carbonara Clásica</div>
+                    <div class="recipe-meta">
+                        <span>⏱️ 25 min</span>
+                        <span class="rating">⭐ 4.8 (234)</span>
+                    </div>
+                    <div class="recipe-tags">
+                        <span class="tag">Italiano</span>
+                        <span class="tag">Fácil</span>
+                        <span class="tag">Pasta</span>
+                    </div>
+                    <div class="user-section">
+                        <div class="user-avatar">MC</div>
+                        <span>Chef Mario</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card" onclick="showRecipeDetail()">
+                <div class="recipe-image">🥗</div>
+                <div class="recipe-info">
+                    <div class="recipe-title">Ensalada César Gourmet</div>
+                    <div class="recipe-meta">
+                        <span>⏱️ 15 min</span>
+                        <span class="rating">⭐ 4.6 (189)</span>
+                    </div>
+                    <div class="recipe-tags">
+                        <span class="tag">Saludable</span>
+                        <span class="tag">Rápido</span>
+                        <span class="tag">Vegetariano</span>
+                    </div>
+                    <div class="user-section">
+                        <div class="user-avatar">LA</div>
+                        <span>Chef Luna</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card" onclick="showRecipeDetail()">
+                <div class="recipe-image">🍰</div>
+                <div class="recipe-info">
+                    <div class="recipe-title">Cheesecake de Fresa</div>
+                    <div class="recipe-meta">
+                        <span>⏱️ 45 min</span>
+                        <span class="rating">⭐ 4.9 (156)</span>
+                    </div>
+                    <div class="recipe-tags">
+                        <span class="tag">Postre</span>
+                        <span class="tag">Sin Horno</span>
+                        <span class="tag">Especial</span>
+                    </div>
+                    <div class="user-section">
+                        <div class="user-avatar">AB</div>
+                        <span>Chef Ana</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <h2 class="section-title">✨ Características</h2>
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">📝</div>
+                <div class="feature-title">Lista de Compras</div>
+                <p>Genera automáticamente tu lista de compras basada en las recetas seleccionadas</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <div class="feature-title">Información Nutricional</div>
+                <p>Conoce las calorías y nutrientes de cada receta de forma automática</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🍽️</div>
+                <div class="feature-title">Planificador de Menús</div>
+                <p>Planifica tus comidas semanales y mantén una dieta balanceada</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">👥</div>
+                <div class="feature-title">Comunidad Activa</div>
+                <p>Comparte, comenta y aprende de otros amantes de la cocina</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Add Button -->
+    <button class="floating-btn" onclick="showAddRecipe()" title="Agregar Nueva Receta">+</button>
+
+    <!-- Modal for Recipe Detail -->
+    <div id="recipeModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>🍝 Pasta Carbonara Clásica</h2>
+            <div style="margin: 1rem 0;">
+                <span>⏱️ 25 minutos | 👥 4 porciones | ⭐ 4.8 (234 reviews)</span>
+            </div>
+            
+            <h3>Ingredientes:</h3>
+            <ul style="margin: 1rem 0; padding-left: 2rem;">
+                <li>400g de spaghetti</li>
+                <li>200g de panceta o guanciale</li>
+                <li>3 huevos enteros + 2 yemas</li>
+                <li>100g de queso parmesano rallado</li>
+                <li>Pimienta negra recién molida</li>
+                <li>Sal al gusto</li>
+            </ul>
+
+            <h3>Instrucciones:</h3>
+            <ol style="margin: 1rem 0; padding-left: 2rem;">
+                <li>Cocina la pasta en agua con sal hasta que esté al dente</li>
+                <li>Mientras tanto, corta la panceta en cubitos y fríela hasta que esté dorada</li>
+                <li>Bate los huevos con el queso y pimienta en un bowl</li>
+                <li>Escurre la pasta reservando un poco del agua de cocción</li>
+                <li>Mezcla rápidamente la pasta caliente con la mezcla de huevos</li>
+            </ol>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <button class="btn-primary">💾 Guardar Receta</button>
+                <button class="btn-primary" style="margin-left: 1rem;">🛒 Agregar a Lista</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showRecipeDetail() {
+            document.getElementById('recipeModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('recipeModal').style.display = 'none';
+        }
+
+        function showLogin() {
+            alert('Modal de Login - Aquí implementarías el formulario de login');
+        }
+
+        function showRegister() {
+            alert('Modal de Registro - Aquí implementarías el formulario de registro');
+        }
+
+        function showAddRecipe() {
+            alert('Modal para Agregar Receta - Formulario con campos para título, ingredientes, instrucciones, etc.');
+        }
+
+        // Cerrar modal al hacer click fuera
+        window.onclick = function(event) {
+            let modal = document.getElementById('recipeModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // Animación en las tarjetas al hacer scroll
+        function animateOnScroll() {
+            const cards = document.querySelectorAll('.recipe-card, .feature-card');
+            cards.forEach(card => {
+                const rect = card.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }
+            });
+        }
+
+        window.addEventListener('scroll', animateOnScroll);
+        animateOnScroll(); // Ejecutar al cargar
+    </script>
+
+    <!-- Footer -->
+    <footer class="modern-footer">
+        <div class="footer-wave">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#e74c3c" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,149.3C960,160,1056,160,1152,138.7C1248,117,1344,75,1392,53.3L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            </svg>
+        </div>
+        
+        <div class="footer-content-wrapper">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <div class="footer-logo-container">
+                        <h2 class="footer-logo">Cook<span>Share</span></h2>
+                    </div>
+                    <p class="footer-slogan">Sabores que inspiran, recetas que conectan</p>
+                    <div class="newsletter">
+                        <h3>¡Únete a nuestra newsletter!</h3>
+                        <div class="newsletter-form">
+                            <input type="email" placeholder="Tu correo electrónico">
+                            <button class="btn-subscribe">Suscribirse</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-nav">
+                    <div class="footer-nav-column">
+                        <h3>Explorar</h3>
+                        <ul>
+                            <li><a href="#">Recetas populares</a></li>
+                            <li><a href="#">Novedades</a></li>
+                            <li><a href="#">Categorías</a></li>
+                            <li><a href="#">Chefs destacados</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-nav-column">
+                        <h3>Comunidad</h3>
+                        <ul>
+                            <li><a href="#">Foros</a></li>
+                            <li><a href="#">Eventos</a></li>
+                            <li><a href="#">Concursos</a></li>
+                            <li><a href="#">Blog</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-nav-column">
+                        <h3>Soporte</h3>
+                        <ul>
+                            <li><a href="#">Ayuda</a></li>
+                            <li><a href="#">Contacto</a></li>
+                            <li><a href="#">Política de privacidad</a></li>
+                            <li><a href="#">Términos de uso</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-social">
+                <div class="social-icons">
+                    <a href="#" class="social-icon" aria-label="Facebook">FB</a>
+                    <a href="#" class="social-icon" aria-label="Instagram">IG</a>
+                    <a href="#" class="social-icon" aria-label="Twitter">TW</a>
+                    <a href="#" class="social-icon" aria-label="Pinterest">PT</a>
+                    <a href="#" class="social-icon" aria-label="YouTube">YT</a>
+                </div>
+                <div class="app-download">
+                    <p>Descarga nuestra app:</p>
+                    <div class="app-buttons">
+                        <a href="#" class="app-button">App Store</a>
+                        <a href="#" class="app-button">Google Play</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2023 CookShare. Todos los derechos reservados.</p>
+            <p>Hecho con ❤️ para amantes de la cocina</p>
+        </div>
+    </footer>
+</body>
+</html>

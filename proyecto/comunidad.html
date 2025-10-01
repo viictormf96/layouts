@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comunidad - CookShare</title>
+    <link rel="stylesheet" href="recetas-wireframe.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .page-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/1920x300') no-repeat center center/cover;
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .page-header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        
+        .community-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .sidebar {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .sidebar-section {
+            margin-bottom: 30px;
+        }
+        
+        .sidebar-section h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .user-profile {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .user-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 15px;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #666;
+        }
+        
+        .user-info h4 {
+            margin-bottom: 5px;
+        }
+        
+        .user-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            flex: 1;
+        }
+        
+        .stat-item .number {
+            font-size: 20px;
+            font-weight: 600;
+            color: #ff6b6b;
+            margin-bottom: 5px;
+        }
+        
+        .stat-item .label {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .popular-tags a {
+            background-color: #f0f0f0;
+            padding: 5px 10px;
+            border-radius: 20px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            font-size: 12px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .popular-tags a:hover {
+            background-color: #ff6b6b;
+            color: white;
+        }
+        
+        .main-content {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tabs {
+            display: flex;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 20px;
+        }
+        
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            position: relative;
+            font-weight: 500;
+        }
+        
+        .tab.active {
+            color: #ff6b6b;
+        }
+        
+        .tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #ff6b6b;
+        }
+        
+        .post {
+            border-bottom: 1px solid #eee;
+            padding: 20px 0;
+        }
+        
+        .post:last-child {
+            border-bottom: none;
+        }
+        
+        .post-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .post-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .post-author img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        
+        .post-author-info h4 {
+            margin-bottom: 5px;
+        }
+        
+        .post-date {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .post-content {
+            margin-bottom: 15px;
+        }
+        
+        .post-image {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .post-actions {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .post-buttons {
+            display: flex;
+        }
+        
+        .post-button {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+            color: #666;
+            transition: all 0.3s ease;
+        }
+        
+        .post-button:hover {
+            color: #ff6b6b;
+        }
+        
+        .post-button i {
+            margin-right: 5px;
+        }
+        
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .member-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .member-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .member-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            color: #666;
+        }
+        
+        .member-card h3 {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+        
+        .member-card p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .member-stats {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+        
+        .member-stat {
+            margin: 0 10px;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .member-stat span {
+            font-weight: 600;
+            color: #ff6b6b;
+        }
+        
+        @media (max-width: 768px) {
+            .community-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .members-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .members-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>CookShare</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="recetas-wireframe.html">Inicio</a></li>
+                    <li><a href="recetas.html">Recetas</a></li>
+                    <li><a href="categorias.html">Categorías</a></li>
+                    <li><a href="comunidad.html" class="active">Comunidad</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
+                <a href="#" class="btn-secondary">Iniciar Sesión</a>
+                <a href="#" class="btn-primary">Registrarse</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Comunidad CookShare</h1>
+            <p>Conecta con otros amantes de la cocina, comparte tus recetas y aprende juntos</p>
+        </div>
+    </section>
+
+    <section class="community-section">
+        <div class="container">
+            <div class="community-grid">
+                <div class="sidebar">
+                    <div class="sidebar-section">
+                        <div class="user-profile">
+                            <div class="user-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="user-info">
+                                <h4>Invitado</h4>
+                                <a href="#" class="btn-secondary">Iniciar Sesión</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-section">
+                        <h3>Miembros Destacados</h3>
+                        <div class="user-profile">
+                            <img src="https://via.placeholder.com/60" alt="Avatar" class="user-avatar">
+                            <div class="user-info">
+                                <h4>María García</h4>
+                                <p>Chef Profesional</p>
+                            </div>
+                        </div>
+                        <div class="user-profile">
+                            <img src="https://via.placeholder.com/60" alt="Avatar" class="user-avatar">
+                            <div class="user-info">
+                                <h4>Carlos Rodríguez</h4>
+                                <p>Pastelero</p>
+                            </div>
+                        </div>
+                        <div class="user-profile">
+                            <img src="https://via.placeholder.com/60" alt="Avatar" class="user-avatar">
+                            <div class="user-info">
+                                <h4>Ana Martínez</h4>
+                                <p>Foodie</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-section">
+                        <h3>Temas Populares</h3>
+                        <div class="popular-tags">
+                            <a href="#">Recetas veganas</a>
+                            <a href="#">Postres sin horno</a>
+                            <a href="#">Cocina italiana</a>
+                            <a href="#">Batch cooking</a>
+                            <a href="#">Cocina rápida</a>
+                            <a href="#">Repostería</a>
+                            <a href="#">Cocina asiática</a>
+                            <a href="#">Sin gluten</a>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-section">
+                        <h3>Eventos Próximos</h3>
+                        <div class="event">
+                            <h4>Taller de Pasta Casera</h4>
+                            <p><i class="far fa-calendar"></i> 15 de Julio, 2023</p>
+                            <p><i class="far fa-clock"></i> 18:00 - 20:00</p>
+                            <a href="#" class="btn-primary">Inscribirse</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="main-content">
+                    <div class="tabs">
+                        <div class="tab active">Publicaciones</div>
+                        <div class="tab">Recetas Compartidas</div>
+                        <div class="tab">Miembros</div>
+                        <div class="tab">Grupos</div>
+                    </div>
+                    
+                    <div class="posts">
+                        <div class="post">
+                            <div class="post-header">
+                                <div class="post-author">
+                                    <img src="https://via.placeholder.com/40" alt="Avatar">
+                                    <div class="post-author-info">
+                                        <h4>María García</h4>
+                                        <span class="post-date">Hace 2 horas</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="post-content">
+                                <p>¡Acabo de probar esta receta de lasaña vegetariana y ha quedado increíble! Os comparto la foto del resultado final. Si alguien quiere la receta, que me avise en los comentarios.</p>
+                                <img src="https://via.placeholder.com/600x400" alt="Lasaña vegetariana" class="post-image">
+                            </div>
+                            <div class="post-actions">
+                                <div class="post-buttons">
+                                    <a href="#" class="post-button"><i class="far fa-heart"></i> 45</a>
+                                    <a href="#" class="post-button"><i class="far fa-comment"></i> 12</a>
+                                    <a href="#" class="post-button"><i class="far fa-bookmark"></i></a>
+                                </div>
+                                <a href="#" class="post-button"><i class="fas fa-share"></i> Compartir</a>
+                            </div>
+                        </div>
+                        
+                        <div class="post">
+                            <div class="post-header">
+                                <div class="post-author">
+                                    <img src="https://via.placeholder.com/40" alt="Avatar">
+                                    <div class="post-author-info">
+                                        <h4>Carlos Rodríguez</h4>
+                                        <span class="post-date">Hace 5 horas</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="post-content">
+                                <p>¿Alguien tiene alguna recomendación para sustituir la mantequilla en recetas de repostería? Estoy intentando reducir los lácteos pero no quiero perder sabor.</p>
+                            </div>
+                            <div class="post-actions">
+                                <div class="post-buttons">
+                                    <a href="#" class="post-button"><i class="far fa-heart"></i> 18</a>
+                                    <a href="#" class="post-button"><i class="far fa-comment"></i> 24</a>
+                                    <a href="#" class="post-button"><i class="far fa-bookmark"></i></a>
+                                </div>
+                                <a href="#" class="post-button"><i class="fas fa-share"></i> Compartir</a>
+                            </div>
+                        </div>
+                        
+                        <div class="post">
+                            <div class="post-header">
+                                <div class="post-author">
+                                    <img src="https://via.placeholder.com/40" alt="Avatar">
+                                    <div class="post-author-info">
+                                        <h4>Ana Martínez</h4>
+                                        <span class="post-date">Hace 1 día</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="post-content">
+                                <p>¡He publicado una nueva receta de tarta de chocolate sin horno! Perfecta para el verano cuando no queremos encender el horno. ¡Espero que os guste!</p>
+                                <img src="https://via.placeholder.com/600x400" alt="Tarta de chocolate sin horno" class="post-image">
+                            </div>
+                            <div class="post-actions">
+                                <div class="post-buttons">
+                                    <a href="#" class="post-button"><i class="far fa-heart"></i> 72</a>
+                                    <a href="#" class="post-button"><i class="far fa-comment"></i> 8</a>
+                                    <a href="#" class="post-button"><i class="far fa-bookmark"></i></a>
+                                </div>
+                                <a href="#" class="post-button"><i class="fas fa-share"></i> Compartir</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section-header">
+                <h2>Miembros Destacados</h2>
+                <a href="#" class="view-all">Ver todos <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="members-grid">
+                <div class="member-card">
+                    <div class="member-avatar">
+                        <img src="https://via.placeholder.com/80" alt="Avatar">
+                    </div>
+                    <h3>María García</h3>
+                    <p>Chef Profesional</p>
+                    <div class="member-stats">
+                        <div class="member-stat">
+                            <span>45</span> Recetas
+                        </div>
+                        <div class="member-stat">
+                            <span>1.2k</span> Seguidores
+                        </div>
+                    </div>
+                    <a href="#" class="btn-primary">Seguir</a>
+                </div>
+                
+                <div class="member-card">
+                    <div class="member-avatar">
+                        <img src="https://via.placeholder.com/80" alt="Avatar">
+                    </div>
+                    <h3>Carlos Rodríguez</h3>
+                    <p>Pastelero</p>
+                    <div class="member-stats">
+                        <div class="member-stat">
+                            <span>32</span> Recetas
+                        </div>
+                        <div class="member-stat">
+                            <span>850</span> Seguidores
+                        </div>
+                    </div>
+                    <a href="#" class="btn-primary">Seguir</a>
+                </div>
+                
+                <div class="member-card">
+                    <div class="member-avatar">
+                        <img src="https://via.placeholder.com/80" alt="Avatar">
+                    </div>
+                    <h3>Ana Martínez</h3>
+                    <p>Foodie</p>
+                    <div class="member-stats">
+                        <div class="member-stat">
+                            <span>28</span> Recetas
+                        </div>
+                        <div class="member-stat">
+                            <span>720</span> Seguidores
+                        </div>
+                    </div>
+                    <a href="#" class="btn-primary">Seguir</a>
+                </div>
+                
+                <div class="member-card">
+                    <div class="member-avatar">
+                        <img src="https://via.placeholder.com/80" alt="Avatar">
+                    </div>
+                    <h3>Pedro Gómez</h3>
+                    <p>Chef de Cocina Internacional</p>
+                    <div class="member-stats">
+                        <div class="member-stat">
+                            <span>56</span> Recetas
+                        </div>
+                        <div class="member-stat">
+                            <span>1.5k</span> Seguidores
+                        </div>
+                    </div>
+                    <a href="#" class="btn-primary">Seguir</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>¡No te pierdas ninguna receta!</h2>
+                <p>Suscríbete a nuestro boletín y recibe las mejores recetas cada semana.</p>
+                <form>
+                    <input type="email" placeholder="Tu correo electrónico">
+                    <button type="submit" class="btn-primary">Suscribirse</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>CookShare</h3>
+                    <p>La mejor plataforma para descubrir, compartir y disfrutar de recetas deliciosas.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="recetas-wireframe.html">Inicio</a></li>
+                        <li><a href="recetas.html">Recetas</a></li>
+                        <li><a href="categorias.html">Categorías</a></li>
+                        <li><a href="comunidad.html">Comunidad</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Categorías</h4>
+                    <ul>
+                        <li><a href="#">Vegetariano</a></li>
+                        <li><a href="#">Carnes</a></li>
+                        <li><a href="#">Pescados</a></li>
+                        <li><a href="#">Postres</a></li>
+                        <li><a href="#">Panadería</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contacto</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-envelope"></i> info@cookshare.com</li>
+                        <li><i class="fas fa-phone"></i> +34 123 456 789</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Calle Principal 123, Madrid</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 CookShare. Todos los derechos reservados.</p>
+                <div class="footer-links">
+                    <a href="#">Términos y condiciones</a>
+                    <a href="#">Política de privacidad</a>
+                    <a href="#">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
