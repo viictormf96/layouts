@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog | Tasty Bites</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="blog-alt.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@vercel/geist-font/dist/geist-sans.css" />
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chef-hat">
+                    <path d="M17 21a1 1 0 0 0 1-1v-5.35c0-.457.316-.844.727-1.041a4 4 0 0 0-2.134-7.589 5 5 0 0 0-9.186 0 4 4 0 0 0-2.134 7.588c.411.198.727.585.727 1.041V20a1 1 0 0 0 1 1Z"></path>
+                    <path d="M6 17h12"></path>
+                </svg>
+                <h1>Tasty Bites</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="recetas.html">Recetas</a></li>
+                    <li><a href="categorias.html">Categorías</a></li>
+                    <li><a href="comunidad-alt.html">Comunidad</a></li>
+                    <li><a href="blog-alt.html" class="active">Blog</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <a href="inicio-sesion-alt.html" class="btn-secondary">Iniciar Sesión</a>
+                <a href="registro-alt.html" class="btn-primary">Registrarse</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="blog">
+        <section class="blog-hero">
+            <div class="breadcrumb">
+                <a href="index.html">Inicio</a>
+                <span>/</span>
+                <span>Blog</span>
+            </div>
+            <div class="hero-content">
+                <div>
+                    <span class="pill">Historias para saborear</span>
+                    <h2>Ideas frescas, técnicas y viajes culinarios en un mismo lugar</h2>
+                    <p>Explora entrevistas, guías y columnas de expertos que inspiran tu próxima receta.</p>
+                </div>
+                <form class="blog-search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Busca por ingrediente, técnica o destino..." />
+                    <button class="btn-primary">Buscar</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="featured-post">
+            <article>
+                <div class="featured-tag">Crónicas de temporada</div>
+                <h3>Sabores cítricos: recetas brillantes para el verano</h3>
+                <p>Desde mocktails hasta postres ligeros, descubre cómo realzar cada plato con notas cítricas equilibradas.</p>
+                <div class="meta">
+                    <span><i class="far fa-user"></i> Camila Ortega</span>
+                    <span><i class="far fa-clock"></i> 8 min lectura</span>
+                </div>
+                <button class="btn-secondary">Leer historia</button>
+            </article>
+        </section>
+
+        <section class="blog-layout">
+            <section class="post-grid">
+                <article class="post-card">
+                    <span class="tag">Guía</span>
+                    <h4>Cómo dominar la masa madre en 7 pasos prácticos</h4>
+                    <p>Una rutina sencilla para activar, alimentar y hornear panes aireados desde casa.</p>
+                    <div class="meta">
+                        <span>Por Martín Silva</span>
+                        <span>6 min lectura</span>
+                    </div>
+                </article>
+                <article class="post-card">
+                    <span class="tag">Entrevista</span>
+                    <h4>La chef que redefine la cocina ancestral peruana</h4>
+                    <p>Conoce a Paula Chacón y su enfoque sostenible para rescatar productos de la sierra.</p>
+                    <div class="meta">
+                        <span>Por Equipo Tasty Bites</span>
+                        <span>10 min lectura</span>
+                    </div>
+                </article>
+                <article class="post-card">
+                    <span class="tag">Recorrido</span>
+                    <h4>48 horas comiendo street food en Ciudad de México</h4>
+                    <p>Tacos al pastor, esquites y dulces tradicionales en una guía para foodies aventureros.</p>
+                    <div class="meta">
+                        <span>Por Andrea Gómez</span>
+                        <span>9 min lectura</span>
+                    </div>
+                </article>
+                <article class="post-card">
+                    <span class="tag">Tips</span>
+                    <h4>Técnicas para asar vegetales con caramelización perfecta</h4>
+                    <p>Ajusta temperaturas, condimentos y tiempos de reposo para lograr sabores intensos.</p>
+                    <div class="meta">
+                        <span>Por Tomás Ruiz</span>
+                        <span>5 min lectura</span>
+                    </div>
+                </article>
+            </section>
+
+            <aside class="blog-sidebar">
+                <div class="sidebar-card newsletter">
+                    <h4>Recibe el boletín semanal</h4>
+                    <p>Historias seleccionadas, tutoriales y retos exclusivos cada viernes.</p>
+                    <form>
+                        <input type="email" placeholder="tu correo" />
+                        <button class="btn-primary">Suscribirme</button>
+                    </form>
+                </div>
+                <div class="sidebar-card popular">
+                    <h4>Temas populares</h4>
+                    <div class="topics">
+                        <button class="chip">Batch cooking</button>
+                        <button class="chip">Fermentos</button>
+                        <button class="chip">Plant-based</button>
+                        <button class="chip">Viajes</button>
+                        <button class="chip">Café</button>
+                        <button class="chip">Postres</button>
+                    </div>
+                </div>
+                <div class="sidebar-card spotlight">
+                    <h4>Colaborador destacado</h4>
+                    <div class="author">
+                        <img src="https://i.pravatar.cc/80?img=19" alt="" />
+                        <div>
+                            <strong>Sofía Calderón</strong>
+                            <span>Especialista en cocina botánica</span>
+                        </div>
+                    </div>
+                    <p>Explora su nueva serie de recetas que combinan hierbas aromáticas con técnicas contemporáneas.</p>
+                    <button class="btn-secondary">Leer serie</button>
+                </div>
+            </aside>
+        </section>
+    </main>
+</body>
+</html>

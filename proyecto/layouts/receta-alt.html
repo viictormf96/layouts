@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Receta | Tasty Bites</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="receta-alt.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@vercel/geist-font/dist/geist-sans.css" />
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chef-hat">
+                    <path d="M17 21a1 1 0 0 0 1-1v-5.35c0-.457.316-.844.727-1.041a4 4 0 0 0-2.134-7.589 5 5 0 0 0-9.186 0 4 4 0 0 0-2.134 7.588c.411.198.727.585.727 1.041V20a1 1 0 0 0 1 1Z"></path>
+                    <path d="M6 17h12"></path>
+                </svg>
+                <h1>Tasty Bites</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="recetas.html" class="active">Recetas</a></li>
+                    <li><a href="categorias.html">Categorías</a></li>
+                    <li><a href="comunidad-alt.html">Comunidad</a></li>
+                    <li><a href="blog-alt.html">Blog</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <a href="inicio-sesion-alt.html" class="btn-secondary">Iniciar Sesión</a>
+                <a href="registro-alt.html" class="btn-primary">Registrarse</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="recipe-page">
+        <section class="recipe-hero">
+            <div class="hero-media">
+                <div class="media-frame">
+                    <div class="media-placeholder">Imagen destacada</div>
+                </div>
+                <div class="media-thumbs">
+                    <button class="thumb active">Paso 1</button>
+                    <button class="thumb">Paso 2</button>
+                    <button class="thumb">Paso 3</button>
+                    <button class="thumb">Emplatado</button>
+                </div>
+            </div>
+            <div class="hero-info">
+                <span class="pill">Receta destacada</span>
+                <h2>Risotto de calabaza y salvia crocante</h2>
+                <p>Una versión cremosa con notas dulces y herbales, perfecta para noches acogedoras.</p>
+                <div class="recipe-meta">
+                    <div>
+                        <strong>45 min</strong>
+                        <span>Tiempo total</span>
+                    </div>
+                    <div>
+                        <strong>4 porciones</strong>
+                        <span>Rinde</span>
+                    </div>
+                    <div>
+                        <strong>437 cal</strong>
+                        <span>Por porción</span>
+                    </div>
+                </div>
+                <div class="hero-actions">
+                    <button class="btn-primary">Guardar en colección</button>
+                    <button class="btn-secondary">Planificar semana</button>
+                </div>
+                <div class="author">
+                    <img src="https://i.pravatar.cc/80?img=21" alt="" />
+                    <div>
+                        <strong>Chef Elisa Martínez</strong>
+                        <span>Chef residente • 126 recetas</span>
+                    </div>
+                    <button class="link">Seguir</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="recipe-layout">
+            <article class="recipe-content">
+                <div class="section-card ingredients">
+                    <div class="section-header">
+                        <h3>Ingredientes</h3>
+                        <button class="chip">Porciones x4</button>
+                    </div>
+                    <ul>
+                        <li>280 g de arroz arborio</li>
+                        <li>650 ml de caldo de verduras caliente</li>
+                        <li>250 g de calabaza asada en cubos</li>
+                        <li>1 cebolla blanca pequeña picada</li>
+                        <li>80 ml de vino blanco seco</li>
+                        <li>40 g de queso parmesano rallado</li>
+                        <li>10 hojas de salvia fresca</li>
+                        <li>2 cucharadas de mantequilla</li>
+                        <li>Sal marina y pimienta negra al gusto</li>
+                    </ul>
+                </div>
+
+                <div class="section-card steps">
+                    <div class="section-header">
+                        <h3>Preparación paso a paso</h3>
+                        <div class="step-tools">
+                            <button class="chip">Modo cocina guiada</button>
+                            <button class="chip">Imprimir</button>
+                        </div>
+                    </div>
+                    <ol>
+                        <li>Sofríe la cebolla en mantequilla hasta transparentar. Añade el arroz y nacara 2 minutos.</li>
+                        <li>Desglasa con vino blanco, remueve hasta evaporar y comienza a añadir el caldo caliente poco a poco.</li>
+                        <li>Cuando el arroz esté al dente, incorpora la calabaza asada, mantequilla restante y parmesano.</li>
+                        <li>Fríe la salvia en mantequilla y corona el risotto. Ajusta sal, pimienta y sirve inmediatamente.</li>
+                    </ol>
+                </div>
+
+                <div class="section-card tips">
+                    <h3>Tips del chef</h3>
+                    <ul>
+                        <li>Tuesta ligeramente el arroz antes del vino para intensificar sabores.</li>
+                        <li>Calienta el caldo en paralelo para mantener la cocción uniforme.</li>
+                        <li>Integra la calabaza asada al final para mantener textura.</li>
+                    </ul>
+                </div>
+            </article>
+
+            <aside class="recipe-sidebar">
+                <div class="sidebar-card pairings">
+                    <h4>Maridajes sugeridos</h4>
+                    <p>Vino blanco Chardonnay joven, ensalada de hojas amargas y pan de masa madre.</p>
+                    <button class="btn-secondary">Ver más sugerencias</button>
+                </div>
+                <div class="sidebar-card planner">
+                    <h4>Planificador inteligente</h4>
+                    <div class="planner-row">
+                        <span>¿Añadir al menú?</span>
+                        <button class="switch">Sí</button>
+                    </div>
+                    <div class="planner-row">
+                        <span>Recordatorio</span>
+                        <button class="chip">Viernes • 20:00</button>
+                    </div>
+                    <div class="planner-row">
+                        <span>Notas</span>
+                        <textarea placeholder="Agrega recordatorios o sustituciones"></textarea>
+                    </div>
+                </div>
+                <div class="sidebar-card suggestions">
+                    <h4>Recetas relacionadas</h4>
+                    <ul>
+                        <li>Gnocchi de batata con mantequilla de salvia</li>
+                        <li>Caldo de verduras asadas con miso</li>
+                        <li>Risotto de hongos portobello y trufa</li>
+                    </ul>
+                    <button class="btn-primary">Ver colección otoñal</button>
+                </div>
+            </aside>
+        </section>
+    </main>
+</body>
+</html>
