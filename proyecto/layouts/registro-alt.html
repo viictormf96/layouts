@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crear cuenta | Tasty Bites</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="registro-alt.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@vercel/geist-font/dist/geist-sans.css" />
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chef-hat">
+                    <path d="M17 21a1 1 0 0 0 1-1v-5.35c0-.457.316-.844.727-1.041a4 4 0 0 0-2.134-7.589 5 5 0 0 0-9.186 0 4 4 0 0 0-2.134 7.588c.411.198.727.585.727 1.041V20a1 1 0 0 0 1 1Z"></path>
+                    <path d="M6 17h12"></path>
+                </svg>
+                <h1>Tasty Bites</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="recetas.html">Recetas</a></li>
+                    <li><a href="categorias.html">Categorías</a></li>
+                    <li><a href="comunidad-alt.html">Comunidad</a></li>
+                    <li><a href="blog-alt.html">Blog</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <a href="inicio-sesion-alt.html" class="btn-secondary">Iniciar Sesión</a>
+                <a href="registro-alt.html" class="btn-primary active">Registrarse</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="signup-hero">
+        <div class="signup-card">
+            <div class="signup-progress">
+                <span class="pill">Tu viaje culinario comienza aquí</span>
+                <h2>Crea una cuenta y personaliza cada receta a tu estilo</h2>
+                <p>Únete a miles de cocineros que planifican sus semanas, guardan sus descubrimientos y comparten sus mejores tips.</p>
+                <div class="stats-grid">
+                    <div class="stat">
+                        <span>+8K</span>
+                        <p>Listas inteligentes creadas cada semana</p>
+                    </div>
+                    <div class="stat">
+                        <span>94%</span>
+                        <p>Encuentra recetas ideales en menos de 5 min</p>
+                    </div>
+                    <div class="stat">
+                        <span>120</span>
+                        <p>Retos culinarios activos</p>
+                    </div>
+                </div>
+            </div>
+            <form class="signup-form">
+                <div class="form-header">
+                    <h3>Regístrate gratis</h3>
+                    <p class="muted">Configura tus preferencias para recibir recomendaciones a tu medida.</p>
+                </div>
+                <div class="form-grid">
+                    <label>Nombre completo
+                        <input type="text" placeholder="Carolina López" required />
+                    </label>
+                    <label>Correo electrónico
+                        <input type="email" placeholder="carolina@tastybites.com" required />
+                    </label>
+                    <label>Contraseña
+                        <input type="password" placeholder="Crea una contraseña segura" required />
+                    </label>
+                    <label>Confirmar contraseña
+                        <input type="password" placeholder="Repite tu contraseña" required />
+                    </label>
+                    <label>Preferencia principal
+                        <select>
+                            <option>Platos vegetarianos</option>
+                            <option>Cocina rápida</option>
+                            <option>Repostería creativa</option>
+                            <option>Comida reconfortante</option>
+                        </select>
+                    </label>
+                    <label>Objetivo culinario
+                        <select>
+                            <option>Planificar mis semanas</option>
+                            <option>Explorar nuevas técnicas</option>
+                            <option>Comer más saludable</option>
+                            <option>Compartir con amigos</option>
+                        </select>
+                    </label>
+                </div>
+                <label class="checkbox">
+                    <input type="checkbox" checked />
+                    <span>Deseo recibir retos, colecciones y novedades de la comunidad.</span>
+                </label>
+                <button type="submit" class="btn-primary w-full">Crear cuenta</button>
+                <p class="switch">¿Ya tienes una cuenta? <a href="inicio-sesion-alt.html">Inicia sesión</a></p>
+            </form>
+        </div>
+    </main>
+
+    <section class="steps">
+        <article>
+            <h4><span>1</span> Personaliza tu despensa</h4>
+            <p>Indica tus ingredientes favoritos y restricciones para que las recetas se adapten automáticamente.</p>
+        </article>
+        <article>
+            <h4><span>2</span> Planifica con calendarios dinámicos</h4>
+            <p>Arrastra recetas a tu semana, genera listas de compras y sincroniza con tus dispositivos.</p>
+        </article>
+        <article>
+            <h4><span>3</span> Comparte y aprende en comunidad</h4>
+            <p>Participa en clubs culinarios, retos mensuales y sesiones en vivo con chefs invitados.</p>
+        </article>
+    </section>
+</body>
+</html>

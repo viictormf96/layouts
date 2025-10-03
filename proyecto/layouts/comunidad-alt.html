@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comunidad | Tasty Bites</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="comunidad-alt.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@vercel/geist-font/dist/geist-sans.css" />
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chef-hat">
+                    <path d="M17 21a1 1 0 0 0 1-1v-5.35c0-.457.316-.844.727-1.041a4 4 0 0 0-2.134-7.589 5 5 0 0 0-9.186 0 4 4 0 0 0-2.134 7.588c.411.198.727.585.727 1.041V20a1 1 0 0 0 1 1Z"></path>
+                    <path d="M6 17h12"></path>
+                </svg>
+                <h1>Tasty Bites</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="recetas.html">Recetas</a></li>
+                    <li><a href="categorias.html">Categorías</a></li>
+                    <li><a href="comunidad-alt.html" class="active">Comunidad</a></li>
+                    <li><a href="blog-alt.html">Blog</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <a href="inicio-sesion-alt.html" class="btn-secondary">Iniciar Sesión</a>
+                <a href="registro-alt.html" class="btn-primary">Registrarse</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="community">
+        <section class="community-hero">
+            <div class="hero-copy">
+                <span class="pill">Red de cocineros creativos</span>
+                <h2>Conecta con personas que comparten tu ritmo en la cocina</h2>
+                <p>Organiza clubs culinarios, comparte tus retos y descubre experiencias cercanas a tu estilo alimenticio.</p>
+                <div class="hero-metrics">
+                    <div>
+                        <strong>56K</strong>
+                        <span>Miembros activos</span>
+                    </div>
+                    <div>
+                        <strong>2.3K</strong>
+                        <span>Eventos mensuales</span>
+                    </div>
+                    <div>
+                        <strong>4.9/5</strong>
+                        <span>Valoración de anfitriones</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-media">
+                <article class="highlight">
+                    <div class="highlight-header">
+                        <span class="badge">Nuevo club</span>
+                        <button class="icon-btn"><i class="fas fa-ellipsis"></i></button>
+                    </div>
+                    <h3>Panadería casera para principiantes</h3>
+                    <p>Aprende a domar masas suaves y crujientes con tips en vivo todos los jueves.</p>
+                    <div class="avatars">
+                        <img src="https://i.pravatar.cc/60?img=12" alt="" />
+                        <img src="https://i.pravatar.cc/60?img=35" alt="" />
+                        <img src="https://i.pravatar.cc/60?img=8" alt="" />
+                        <span>+68</span>
+                    </div>
+                    <button class="btn-primary join">Unirme</button>
+                </article>
+            </div>
+        </section>
+
+        <section class="community-layout">
+            <aside class="community-sidebar">
+                <div class="sidebar-card">
+                    <h4>Descubrimiento rápido</h4>
+                    <div class="filter-group">
+                        <button class="chip active">Cocina latina</button>
+                        <button class="chip">Vegano creativo</button>
+                        <button class="chip">Fermentos</button>
+                        <button class="chip">Postres</button>
+                    </div>
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Busca clubs, retos, anfitriones..." />
+                    </div>
+                </div>
+                <div class="sidebar-card">
+                    <h4>Eventos destacados</h4>
+                    <ul class="events">
+                        <li>
+                            <span class="date">22 Jun</span>
+                            <div>
+                                <p>Retos de cocina sin desperdicio</p>
+                                <span>Streaming • 18:00</span>
+                            </div>
+                            <button class="link">Guardar</button>
+                        </li>
+                        <li>
+                            <span class="date">25 Jun</span>
+                            <div>
+                                <p>Tour gastronómico Ciudad de México</p>
+                                <span>Presencial • 10:00</span>
+                            </div>
+                            <button class="link">Detalles</button>
+                        </li>
+                        <li>
+                            <span class="date">27 Jun</span>
+                            <div>
+                                <p>Laboratorio de fermentos naturales</p>
+                                <span>Online • 19:30</span>
+                            </div>
+                            <button class="link">Reservar</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="sidebar-card mentors">
+                    <h4>Mentorías personalizadas</h4>
+                    <p>Conecta con chefs especializados que acompañan tus retos culinarios por 4 semanas.</p>
+                    <button class="btn-secondary">Descubrir mentores</button>
+                </div>
+            </aside>
+
+            <section class="community-feed">
+                <div class="feed-tabs">
+                    <button class="tab active">Para ti</button>
+                    <button class="tab">Clubs</button>
+                    <button class="tab">Retos</button>
+                    <button class="tab">Mentores</button>
+                </div>
+                <div class="feed-grid">
+                    <article class="feed-card">
+                        <div class="card-header">
+                            <img src="https://i.pravatar.cc/56?img=5" alt="" />
+                            <div>
+                                <h5>Luisa Domínguez</h5>
+                                <span>Compartió una colección • Hace 2 h</span>
+                            </div>
+                            <button class="icon-btn"><i class="far fa-bookmark"></i></button>
+                        </div>
+                        <h3>Menú semanal mediterráneo</h3>
+                        <p>12 recetas frescas con base vegetal, listas para arrastrar a tu planificador.</p>
+                        <div class="tag-row">
+                            <span class="tag">#mealprep</span>
+                            <span class="tag">#verano</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="ghost"><i class="far fa-thumbs-up"></i> 268</button>
+                            <button class="ghost"><i class="far fa-comment"></i> 43</button>
+                            <button class="ghost"><i class="fas fa-share"></i> Compartir</button>
+                        </div>
+                    </article>
+
+                    <article class="feed-card">
+                        <div class="card-header">
+                            <img src="https://i.pravatar.cc/56?img=15" alt="" />
+                            <div>
+                                <h5>Club Fuego Lento</h5>
+                                <span>Actualizó su reto mensual • Hace 4 h</span>
+                            </div>
+                            <button class="icon-btn"><i class="fas fa-ellipsis"></i></button>
+                        </div>
+                        <h3>Domina los fondos y caldos base</h3>
+                        <p>Sesiones guiadas cada domingo para dominar fondos claros, oscuros y demi-glace.</p>
+                        <div class="tag-row">
+                            <span class="tag">#técnica</span>
+                            <span class="tag">#profesional</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="ghost"><i class="far fa-thumbs-up"></i> 192</button>
+                            <button class="ghost"><i class="far fa-comment"></i> 67</button>
+                            <button class="ghost"><i class="fas fa-share"></i> Compartir</button>
+                        </div>
+                    </article>
+
+                    <article class="feed-card">
+                        <div class="card-header">
+                            <img src="https://i.pravatar.cc/56?img=23" alt="" />
+                            <div>
+                                <h5>Mentora Anaís</h5>
+                                <span>Abrió cupos para mentorías • Hace 6 h</span>
+                            </div>
+                            <button class="icon-btn"><i class="far fa-heart"></i></button>
+                        </div>
+                        <h3>Pastelería fina en casa</h3>
+                        <p>Acompañamiento personalizado para dominar masas laminadas, mousses y glaseados.</p>
+                        <div class="tag-row">
+                            <span class="tag">#pastelería</span>
+                            <span class="tag">#mentorías</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="ghost"><i class="far fa-thumbs-up"></i> 356</button>
+                            <button class="ghost"><i class="far fa-comment"></i> 102</button>
+                            <button class="ghost"><i class="fas fa-share"></i> Compartir</button>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </section>
+    </main>
+</body>
+</html>
